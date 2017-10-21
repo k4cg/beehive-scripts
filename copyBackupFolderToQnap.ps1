@@ -1,5 +1,5 @@
 $BackupPath = "D:\BACKUP"
-$CredentialFile = "C:\scripts\ps\qnap-hypervserver.credential"
+$CredentialFile = "C:\scripts\vespiary-scripts\qnap-hypervserver.credential"
 
 #--
 
