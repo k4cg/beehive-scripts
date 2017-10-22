@@ -20,6 +20,7 @@ $SectionContent = @"
 {| class="wikitable sortable"
 |-
 ! Name !! Nested !! CPUs !! RAM (MB) !! HDD (GB)
+
 "@
 
 foreach($Vm in $(Get-Vm)) {
@@ -41,15 +42,15 @@ foreach($Vm in $(Get-Vm)) {
 	}
     
 	$SectionContent += @"
-
 |-
 | $VMName || $VmNested || $VmCpus || $VmRam || $VmHdd
+
 "@
 }
 	
 $SectionContent += @"
-
 |}
+
 "@
 
 $SectionContent | Out-File -FilePath $TempFile
