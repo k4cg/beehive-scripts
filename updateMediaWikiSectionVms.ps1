@@ -1,14 +1,14 @@
 $TempPath = "C:\scripts\temp"
-$TempFile = Join-Path -Path $TempPath -ChildPath "updateVespiaryMediaWikiSectionVms_current.txt"
-$CompareFile = Join-Path -Path $TempPath -ChildPath "updateVespiaryMediaWikiSectionVms_old.txt"
-$CredentialFile = "C:\scripts\vespiary-scripts\wiki-Rezeptionistin.credential"
+$TempFile = Join-Path -Path $TempPath -ChildPath "updateMediaWikiSectionVms_current.txt"
+$CompareFile = Join-Path -Path $TempPath -ChildPath "updateMediaWikiSectionVms_old.txt"
+$CredentialFile = "C:\scripts\beehive-scripts\wiki-Rezeptionistin.credential"
 $MediaWikiApiUri = "https://k4cg.org/api.php"
 
 #--
 
 Add-Type -AssemblyName System.Web
 
-$MediaWikiPage = "Host:vespiary.intern.k4cg.org"
+$MediaWikiPage = "Host:beehive.intern.k4cg.org"
 $MediaWikiSection = "VMs"
 
 if(Test-Path $TempFile) {
