@@ -56,7 +56,7 @@ $SectionContent = @"
 |-
 ! Status !! Bed Actual !! Bed Target !! Tool0 Actual !! Tool0 Target
 |-
-| $printerState || $temperatureBedActual || $temperatureBedTarget || $temperatureTool0Actual || $temperatureTool0Target
+| $printerState || $temperatureBedActual °C || $temperatureBedTarget °C || $temperatureTool0Actual °C || $temperatureTool0Target °C
 |}
 ===Job===
 {| class="wikitable"
