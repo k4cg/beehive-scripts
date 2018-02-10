@@ -16,11 +16,13 @@ $printerState = $jobObject.state
 if($printerState -eq 'Printing') {
 	$filename = $jobObject.job.file.name
 	$completion = [Math]::Round($jobObject.progress.completion,2)
+	$completionDateString = "'''Voraussichtlich fertig:'''", $(Get-Date).AddSeconds($jobObject.progress.printTimeLeft).DateTime -join " "
 	$printTime = [TimeSpan]::fromseconds($jobObject.progress.printTime)
 	$printTimeLeft = [TimeSpan]::fromseconds($jobObject.progress.printTimeLeft)
 } else {
 	$filename = '-'
 	$completion = '-'
+	$completionDateString = ''
 	$printTime = '-'
 	$printTimeLeft = '-'
 }
@@ -65,7 +67,7 @@ $SectionContent = @"
 |-
 | $filename || $completion % || $printTime || $printTimeLeft
 |}
-
+$completionDateString
 "@
 
 $SectionContent | Out-File -FilePath $TempFile
