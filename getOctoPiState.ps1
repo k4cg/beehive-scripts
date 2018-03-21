@@ -4,6 +4,8 @@ $apiKey = $apiCred.GetNetworkCredential().Password
 $apiUrl = "http://192.168.178.185/api/"
 $apiUrlAppendix = "?apikey=$apiKey"
 
+$MediaWikiSummaryString = "Section 'Status' updated"
+
 function Invoke-ApiRequest($apiOperation) {
 	$apiRequestUrl = $apiUrl, $apiOperation, $apiUrlAppendix -join ""
 	$apiRequestJson = Invoke-WebRequest -Uri $apiRequestUrl
@@ -137,7 +139,7 @@ $Body.format = 'json'
 $Body.bot = '1'
 $Body.title = $MediaWikiPage
 $Body.section = $SectionId
-$Body.summary = "Section 'VMs' updated"
+$Body.summary = $MediaWikiSummaryString
 $Body.text = $SectionContent
 $Body.token = $CsrfToken
 
