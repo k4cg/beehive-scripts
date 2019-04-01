@@ -10,9 +10,7 @@ function post-influx {
     Invoke-RestMethod -Uri $uri -Method POST -Body $data
 }
 
-$vms=get-vm
-get-vm
-foreach($vm in $vms){
+foreach($vm in Get-VM){
     $name=$vm.name
     $state=$vm.State
     $MemoryA=$vm.MemoryAssigned/1MB
