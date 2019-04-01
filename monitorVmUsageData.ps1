@@ -18,7 +18,6 @@ foreach($vm in Get-VM){
     [uint64]$UnixTimestamp = [double]::Parse((Get-Date -UFormat %s))
 
     $postdata = "hyperv,VmName="+$name+" RamAssigned="+$MemoryA+",RamDemand="+$MemoryD+",State="""+$state+""" $UnixTimestamp"
-    #write-host $postdata
     post-influx -data $postdata
 }
 
